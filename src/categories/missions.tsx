@@ -1,4 +1,5 @@
 import { Common } from "@k8slens/extensions"
+import { Mission } from "../entities/missions"
 
 class MissionCategory extends Common.Catalog.CatalogCategory {
     readonly apiVersion: string = "catalog.k8lens.dev/v1alpha1";
@@ -9,7 +10,12 @@ class MissionCategory extends Common.Catalog.CatalogCategory {
     };
     readonly spec: Common.Catalog.CatalogCategorySpec = {
         group: "v1.missions",
-        versions: [],
+        versions: [
+            {
+                name: "",
+                entityClass: Mission as any 
+            },
+        ],
         names: {
             kind: "Missions",
         }

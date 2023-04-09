@@ -1,5 +1,5 @@
 import { Common } from "@k8slens/extensions";
-import { observable, makeObservable } from "mobx";
+import { observable, makeObservable, toJS } from "mobx";
 
 export type MissionModel = {
   name: string;
@@ -9,7 +9,7 @@ export class MissionStore extends Common.Store.ExtensionStore<MissionModel> {
 
   @observable name = "myFakeMission";
 
-  private constructor() {
+  public constructor() {
     super({
       configName: "mission-store",
       defaults: {
@@ -24,8 +24,8 @@ export class MissionStore extends Common.Store.ExtensionStore<MissionModel> {
   }
 
   toJSON(): MissionModel {
-    return {
+    return toJS({
       name: this.name
-    };
+    });
   }
 }
