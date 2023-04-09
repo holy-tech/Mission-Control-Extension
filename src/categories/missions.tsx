@@ -9,7 +9,7 @@ class MissionCategory extends Common.Catalog.CatalogCategory {
         "icon": "rocket",
     };
     readonly spec: Common.Catalog.CatalogCategorySpec = {
-        group: "v1.missions",
+        group: "entity.k8slens.dev",
         versions: [
             {
                 name: "",
