@@ -3,9 +3,15 @@ import React from "react"
 import { providersStore } from "./providers-store"
 import { Provider } from "./providers"
 
+import path from "path";
+
 enum sortBy {
     name = "name",
     namespace = "namespace",
+}
+
+export function ExampleIcon(props: Renderer.Component.IconProps) {
+  return <Renderer.Component.Icon {...props} material="pages" tooltip={path.basename(__filename)}/>
 }
 
 export class ProviderPage extends React.Component<{ extension: Renderer.LensExtension }> {

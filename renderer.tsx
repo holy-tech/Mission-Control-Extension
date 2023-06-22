@@ -1,17 +1,11 @@
 import { Renderer } from "@k8slens/extensions";
-import { ExampleIcon, ExamplePage } from "./src/example-page"
-import { ProviderPage } from "./src/mission-control/providers-page"
-import { ExamplePodDetails } from "./src/example-pod-details"
+import { ExampleIcon, ProviderPage } from "./src/mission-control/providers-page"
+import { Provider } from "./src/mission-control/providers"
+import { ProviderDetails } from "./src/mission-control/providers-details"
 import React from "react"
 
 export default class ExampleExtension extends Renderer.LensExtension {
   clusterPages = [
-    {
-      id: "hello", // hello-world:foo
-      components: {
-        Page: () => <ExamplePage extension={this}/>,
-      }
-    },
     {
       id: "providers",
       components: {
@@ -21,13 +15,6 @@ export default class ExampleExtension extends Renderer.LensExtension {
   ]
 
   clusterPageMenus = [
-    {
-      target: { pageId: "hello" },
-      title: "Hello World",
-      components: {
-        Icon: ExampleIcon,
-      }
-    },
     {
       target: { pageId: "providers" },
       title: "Provider",
@@ -39,16 +26,16 @@ export default class ExampleExtension extends Renderer.LensExtension {
 
   kubeObjectDetailItems = [
     {
-      kind: "Pod",
-      apiVersions: ["v1"],
+      kind: Provider.kind,
+      apiVersions: ["pkg.crossplane.io/v1"],
       priority: 10,
       components: {
-        Details: (props: Renderer.Component.KubeObjectDetailsProps<Renderer.K8sApi.Pod>) => <ExamplePodDetails {...props} />
+        Details: (props: Renderer.Component.KubeObjectDetailsProps<Provider>) => <ProviderDetails {...props} />
       }
     }
   ]
 
   async onActivate() {
-    console.log("hello world")
+    console.log("Mission Control extension added")
   }
 }

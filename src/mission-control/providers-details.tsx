@@ -1,5 +1,6 @@
 import { Renderer } from "@k8slens/extensions";
 import React from "react";
+import { Provider } from "./providers"
 
 const {
   Component: {
@@ -9,7 +10,7 @@ const {
 } = Renderer;
 
 
-export class ExamplePodDetails extends React.Component<Renderer.Component.KubeObjectDetailsProps<Renderer.K8sApi.Pod>> {
+export class ProviderDetails extends React.Component<Renderer.Component.KubeObjectDetailsProps<Provider>> {
   render() {
     return (
       <div>
