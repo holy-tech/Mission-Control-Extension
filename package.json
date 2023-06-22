@@ -1,22 +1,18 @@
 {
-  "name": "@k8slens/helloworld-sample",
+  "name": "mission-control",
   "version": "0.0.1",
   "author": "Mirantis, Inc <info@k8slens.dev> (https://k8slens.dev)",
   "maintainers": [
     {
-      "name": "naveenbanala",
-      "email": "naveenbanala93@gmail.com"
-    },
-    {
-      "name": "k8slens-bot",
-      "email": "info@k8slens.dev"
+      "name": "hoftherose",
+      "email": "hoftherose@gmail.com"
     }
   ],
   "description": "Lens extension Hello World sample",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lensapp/lens-extension-samples.git",
-    "directory": "helloworld-sample"
+    "url": "https://github.com/hoftherose/mission-control",
+    "directory": ""
   },
   "engines": {
     "lens": "^6.0.0"
@@ -41,16 +37,15 @@
     "webpack-cli": "^5.0.1"
   },
   "license": "MIT",
-  "homepage": "https://github.com/lensapp/lens-extension-samples",
+  "homepage": "https://github.com/hoftherose/mission-control",
   "bugs": {
-    "url": "https://github.com/lensapp/lens-extension-samples/issues"
+    "url": "https://github.com/hoftherose/mission-control/issues"
   },
   "keywords": [
     "example",
     "extension",
     "k8slens",
     "lens",
-    "mirantis",
-    "tutorial"
+    "cloud"
   ]
 }
