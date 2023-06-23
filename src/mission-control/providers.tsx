@@ -11,6 +11,7 @@ export class Provider extends Renderer.K8sApi.KubeObject {
     name: string;
     namespace: string;
     selfLink: string;
+    creationTimestamp: string;
   }
   spec: {
     package: string;

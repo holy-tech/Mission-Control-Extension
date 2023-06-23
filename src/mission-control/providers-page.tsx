@@ -8,6 +8,10 @@ import path from "path";
 enum sortBy {
     name = "name",
     namespace = "namespace",
+    package = "package",
+    installed = "installed",
+    healthy = "healthy",
+    age = "age",
 }
 
 export function ExampleIcon(props: Renderer.Component.IconProps) {
@@ -22,7 +26,10 @@ export class ProviderPage extends React.Component<{ extension: Renderer.LensExte
           className="Providers" store={providersStore}
           sortingCallbacks={{
             [sortBy.name]: (provider: Provider) => provider.getName(),
-            [sortBy.namespace]: (provider: Provider) => provider.metadata.namespace,
+            [sortBy.package]: (provider: Provider) => provider.spec.package,
+            [sortBy.installed]: (provider: Provider) => provider.status.conditions.find(c => c.type == "Installed").status,
+            [sortBy.healthy]: (provider: Provider) => provider.status.conditions.find(c => c.type == "Healthy").status,
+            [sortBy.age]: (provider: Provider) => provider.metadata.creationTimestamp
           }}
           searchFilters={[
             (provider: Provider) => provider.getSearchFields()
@@ -30,11 +37,17 @@ export class ProviderPage extends React.Component<{ extension: Renderer.LensExte
           renderHeaderTitle="Providers"
           renderTableHeader={[
             { title: "Name", className: "name", sortBy: sortBy.name },
-            { title: "Namespace", className: "namespace", sortBy: sortBy.namespace },
+            { title: "Package", className: "package", sortBy: sortBy.package },
+            { title: "Installed", className: "installed", sortBy: sortBy.installed },
+            { title: "Healthy", className: "healthy", sortBy: sortBy.healthy },
+            { title: "Age", className: "age", sortBy: sortBy.age },
           ]}
           renderTableContents={(provider: Provider) => [
             provider.getName(),
-            provider.metadata.namespace
+            provider.spec.package,
+            provider.status.conditions.find(c => c.type == "Installed").status,
+            provider.status.conditions.find(c => c.type == "Healthy").status,
+            provider.getAge()
           ]}
         />
       </Renderer.Component.TabLayout>

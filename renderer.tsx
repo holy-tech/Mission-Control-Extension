@@ -4,6 +4,12 @@ import { Provider } from "./src/mission-control/providers"
 import { ProviderDetails } from "./src/mission-control/providers-details"
 import React from "react"
 
+const {
+  Component: {
+    Icon,
+  }
+} = Renderer;
+
 export default class ExampleExtension extends Renderer.LensExtension {
   clusterPages = [
     {
@@ -27,7 +33,7 @@ export default class ExampleExtension extends Renderer.LensExtension {
       target: { pageId: "providers" },
       title: "Providers",
       components: {
-        Icon: ExampleIcon,
+        Icon: () => <Icon material="arrow"/>,
       }
     }
   ]
