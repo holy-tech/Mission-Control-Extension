@@ -19,7 +19,7 @@ export class ProviderPage extends React.Component<{ extension: Renderer.LensExte
     return (
         <Renderer.Component.TabLayout>
         <Renderer.Component.KubeObjectListLayout
-          className="Certicates" store={providersStore}
+          className="Providers" store={providersStore}
           sortingCallbacks={{
             [sortBy.name]: (provider: Provider) => provider.getName(),
             [sortBy.namespace]: (provider: Provider) => provider.metadata.namespace,

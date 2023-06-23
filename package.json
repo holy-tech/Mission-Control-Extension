@@ -1,6 +1,6 @@
 {
   "name": "mission-control",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Mirantis, Inc <info@k8slens.dev> (https://k8slens.dev)",
   "maintainers": [
     {

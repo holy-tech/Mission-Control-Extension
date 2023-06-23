@@ -16,8 +16,16 @@ export default class ExampleExtension extends Renderer.LensExtension {
 
   clusterPageMenus = [
     {
+      id: "mission-control",
+      title: "Mission Control",
+      components: {
+        Icon: ExampleIcon,
+      }
+    },
+    {
+      parentId: "mission-control",
       target: { pageId: "providers" },
-      title: "Provider",
+      title: "Providers",
       components: {
         Icon: ExampleIcon,
       }
