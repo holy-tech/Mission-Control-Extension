@@ -1,7 +1,7 @@
 import { Renderer } from "@k8slens/extensions";
-import { ExampleIcon, ProviderPage } from "./src/mission-control/providers-page"
-import { Provider } from "./src/mission-control/providers"
-import { ProviderDetails } from "./src/mission-control/providers-details"
+import { ExampleIcon, ProviderPage } from "./src/mission-control/crossplane-config/providers-page"
+import { Provider } from "./src/mission-control/crossplane-config/providers"
+import { ProviderDetails } from "./src/mission-control/crossplane-config/providers-details"
 import React from "react"
 
 const {

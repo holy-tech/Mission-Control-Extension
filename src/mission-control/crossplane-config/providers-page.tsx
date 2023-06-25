@@ -27,8 +27,8 @@ export class ProviderPage extends React.Component<{ extension: Renderer.LensExte
           sortingCallbacks={{
             [sortBy.name]: (provider: Provider) => provider.getName(),
             [sortBy.package]: (provider: Provider) => provider.spec.package,
-            [sortBy.installed]: (provider: Provider) => provider.status.conditions.find(c => c.type == "Installed").status,
-            [sortBy.healthy]: (provider: Provider) => provider.status.conditions.find(c => c.type == "Healthy").status,
+            [sortBy.installed]: (provider: Provider) => provider.status.conditions.find(c => c.type == "Installed")?.status,
+            [sortBy.healthy]: (provider: Provider) => provider.status.conditions.find(c => c.type == "Healthy")?.status,
             [sortBy.age]: (provider: Provider) => provider.metadata.creationTimestamp
           }}
           searchFilters={[
@@ -45,8 +45,8 @@ export class ProviderPage extends React.Component<{ extension: Renderer.LensExte
           renderTableContents={(provider: Provider) => [
             provider.getName(),
             provider.spec.package,
-            provider.status.conditions.find(c => c.type == "Installed").status,
-            provider.status.conditions.find(c => c.type == "Healthy").status,
+            provider.status.conditions.find(c => c.type == "Installed")?.status,
+            provider.status.conditions.find(c => c.type == "Healthy")?.status,
             provider.getAge()
           ]}
         />
