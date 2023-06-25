@@ -1,7 +1,7 @@
 import { Renderer } from "@k8slens/extensions";
-import { ExampleIcon, ProviderPage } from "./src/mission-control/crossplane-config/providers-page"
-import { Provider } from "./src/mission-control/crossplane-config/providers"
-import { ProviderDetails } from "./src/mission-control/crossplane-config/providers-details"
+import { ExampleIcon, MissionPage } from "./src/mission-control/crossplane-config/missions-page"
+import { Mission } from "./src/mission-control/crossplane-config/missions"
+import { MissionDetails } from "./src/mission-control/crossplane-config/missions-details"
 import React from "react"
 
 const {
@@ -13,9 +13,9 @@ const {
 export default class ExampleExtension extends Renderer.LensExtension {
   clusterPages = [
     {
-      id: "providers",
+      id: "missions",
       components: {
-        Page: () => <ProviderPage extension={this}/>,
+        Page: () => <MissionPage extension={this}/>,
       }
     }
   ]
@@ -30,8 +30,8 @@ export default class ExampleExtension extends Renderer.LensExtension {
     },
     {
       parentId: "mission-control",
-      target: { pageId: "providers" },
-      title: "Providers",
+      target: { pageId: "missions" },
+      title: "Missions",
       components: {
         Icon: () => <Icon material="arrow"/>,
       }
@@ -40,11 +40,11 @@ export default class ExampleExtension extends Renderer.LensExtension {
 
   kubeObjectDetailItems = [
     {
-      kind: Provider.kind,
-      apiVersions: ["pkg.crossplane.io/v1"],
+      kind: Mission.kind,
+      apiVersions: ["mission.mission-control.apis.io/v1alpha1"],
       priority: 10,
       components: {
-        Details: (props: Renderer.Component.KubeObjectDetailsProps<Provider>) => <ProviderDetails {...props} />
+        Details: (props: Renderer.Component.KubeObjectDetailsProps<Mission>) => <MissionDetails {...props} />
       }
     }
   ]

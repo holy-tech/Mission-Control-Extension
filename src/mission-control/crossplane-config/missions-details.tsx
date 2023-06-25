@@ -1,6 +1,6 @@
 import { Renderer } from "@k8slens/extensions";
 import React from "react";
-import { Provider } from "./providers"
+import { Mission } from "./missions"
 
 const {
   Component: {
@@ -10,7 +10,7 @@ const {
 } = Renderer;
 
 
-export class ProviderDetails extends React.Component<Renderer.Component.KubeObjectDetailsProps<Provider>> {
+export class MissionDetails extends React.Component<Renderer.Component.KubeObjectDetailsProps<Mission>> {
   render() {
     return (
       <div>
