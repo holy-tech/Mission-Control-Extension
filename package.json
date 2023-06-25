@@ -1,7 +1,7 @@
 {
   "name": "mission-control",
   "version": "0.0.2",
-  "author": "Mirantis, Inc <info@k8slens.dev> (https://k8slens.dev)",
+  "author": "HolyTech",
   "maintainers": [
     {
       "name": "hoftherose",
@@ -36,7 +36,7 @@
     "webpack": "^5.76.0",
     "webpack-cli": "^5.0.1"
   },
-  "license": "MIT",
+  "license": "GPL-3.0",
   "homepage": "https://github.com/hoftherose/mission-control",
   "bugs": {
     "url": "https://github.com/hoftherose/mission-control/issues"
