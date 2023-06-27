@@ -14,10 +14,14 @@ export class MissionDetails extends React.Component<Renderer.Component.KubeObjec
   render() {
     return (
       <div>
-        <DrawerTitle title="Hello" />
-        <DrawerItem name="Message">
-          Hello { this.props.object.getName() }!
-        </DrawerItem>
+        <DrawerTitle children="Packages" />
+        {this.props.object.spec.packages.map(function(object, i){
+          return (
+            <DrawerItem name={ object }>
+              Hello { object }!
+            </DrawerItem>
+          )
+        })}
       </div>
     )
   }
