@@ -14,7 +14,7 @@ export class Mission extends Renderer.K8sApi.KubeObject {
     creationTimestamp: string;
   }
   spec: {
-    name: string;
+    packages: string[];
   }
   status: {}
 }

@@ -31,10 +31,12 @@ export class MissionPage extends React.Component<{ extension: Renderer.LensExten
           renderHeaderTitle="Missions"
           renderTableHeader={[
             { title: "Name", className: "name", sortBy: sortBy.name },
+            { title: "Packages", className: "packages"},
             { title: "Age", className: "age", sortBy: sortBy.age },
           ]}
           renderTableContents={(mission: Mission) => [
             mission.getName(),
+            mission.spec.packages.join(", "),
             mission.getAge()
           ]}
         />
