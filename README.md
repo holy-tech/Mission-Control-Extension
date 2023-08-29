@@ -1,5 +1,9 @@
 # Mission Control with OpenLens and Crossplane
 
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/holy-tech/Mission-Control-Extension/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/holy-tech/Mission-Control-Extension/tree/main)
+
 Simple Lens extension tries to enable a GUI for high level crossplane tooling through openlens interface.
 
 ## Install
