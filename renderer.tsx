@@ -1,7 +1,10 @@
 import { Renderer } from "@k8slens/extensions";
 import { ExampleIcon, MissionPage } from "./src/mission-control/crossplane-config/missions/missions-page"
+import { MissionKeyPage } from "./src/mission-control/crossplane-config/missionkeys/missionkeys-page"
 import { Mission } from "./src/mission-control/crossplane-config/missions/missions"
+import { MissionKey } from "./src/mission-control/crossplane-config/missionkeys/missionkeys"
 import { MissionDetails } from "./src/mission-control/crossplane-config/missions/missions-details"
+import { MissionKeyDetails } from "./src/mission-control/crossplane-config/missionkeys/missionkeys-details"
 import React from "react"
 
 const {
@@ -32,6 +35,14 @@ export default class ExampleExtension extends Renderer.LensExtension {
       parentId: "mission-control",
       target: { pageId: "missions" },
       title: "Missions",
+      components: {
+        Icon: () => <Icon material="arrow"/>,
+      }
+    },
+    {
+      parentId: "mission-control",
+      target: { pageId: "missionkeys" },
+      title: "Mission Keys",
       components: {
         Icon: () => <Icon material="arrow"/>,
       }
