@@ -1,7 +1,7 @@
 import { Renderer } from "@k8slens/extensions";
-import { ExampleIcon, MissionPage } from "./src/mission-control/crossplane-config/missions-page"
-import { Mission } from "./src/mission-control/crossplane-config/missions"
-import { MissionDetails } from "./src/mission-control/crossplane-config/missions-details"
+import { ExampleIcon, MissionPage } from "./src/mission-control/crossplane-config/missions/missions-page"
+import { Mission } from "./src/mission-control/crossplane-config/missions/missions"
+import { MissionDetails } from "./src/mission-control/crossplane-config/missions/missions-details"
 import React from "react"
 
 const {
