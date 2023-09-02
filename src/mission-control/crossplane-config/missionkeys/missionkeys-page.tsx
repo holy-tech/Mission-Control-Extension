@@ -17,6 +17,7 @@ export class MissionKeyPage extends React.Component<{ extension: Renderer.LensEx
           className="Missionkeys" store={missionkeysStore}
           sortingCallbacks={{
             [sortBy.name]: (missionkey: MissionKey) => missionkey.getName(),
+            [sortBy.namespace]: (missionkey: MissionKey) => missionkey.getNs(),
             [sortBy.age]: (missionkey: MissionKey) => missionkey.metadata.creationTimestamp
           }}
           searchFilters={[
@@ -25,13 +26,19 @@ export class MissionKeyPage extends React.Component<{ extension: Renderer.LensEx
           renderHeaderTitle="Missionkeys"
           renderTableHeader={[
             { title: "Name", className: "name", sortBy: sortBy.name },
-            { title: "Namespace", className: "namespace"},
+            { title: "Namespace", className: "namespace", sortBy: sortBy.namespace },
             { title: "Data", className: "data"},
             { title: "Age", className: "age", sortBy: sortBy.age },
           ]}
           renderTableContents={(missionkey: MissionKey) => [
             missionkey.getName(),
-            missionkey.spec.data,
+            missionkey.getNs(),
+            <Renderer.Component.Badge
+              scrollable
+              key={missionkey.spec.data}
+              label={missionkey.spec.data}
+              expandable={false}
+            />,
             missionkey.getAge()
           ]}
         />
