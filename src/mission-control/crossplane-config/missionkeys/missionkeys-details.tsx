@@ -15,8 +15,13 @@ export class MissionKeyDetails extends React.Component<Renderer.Component.KubeOb
     return (
       <div>
         <DrawerTitle children="Packages" />
-          <DrawerItem name={ this.props.object.spec.data }>
-            { this.props.object.spec.data }!
+          <DrawerItem name={ "key" }>
+            <Renderer.Component.Input
+              multiLine={true}
+              theme="round-black"
+              className="box grow"
+              value={ this.props.object.spec.data }
+            />
           </DrawerItem>
       </div>
     )
