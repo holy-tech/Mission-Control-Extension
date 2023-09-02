@@ -20,6 +20,12 @@ export default class ExampleExtension extends Renderer.LensExtension {
       components: {
         Page: () => <MissionPage extension={this}/>,
       }
+    },
+    {
+      id: "missionkeys",
+      components: {
+        Page: () => <MissionKeyPage extension={this}/>,
+      }
     }
   ]
 
@@ -56,6 +62,14 @@ export default class ExampleExtension extends Renderer.LensExtension {
       priority: 10,
       components: {
         Details: (props: Renderer.Component.KubeObjectDetailsProps<Mission>) => <MissionDetails {...props} />
+      }
+    },
+    {
+      kind: MissionKey.kind,
+      apiVersions: ["mission.mission-control.apis.io/v1alpha1"],
+      priority: 10,
+      components: {
+        Details: (props: Renderer.Component.KubeObjectDetailsProps<MissionKey>) => <MissionKeyDetails {...props} />
       }
     }
   ]

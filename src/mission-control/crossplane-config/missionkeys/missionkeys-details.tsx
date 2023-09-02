@@ -16,7 +16,7 @@ export class MissionKeyDetails extends React.Component<Renderer.Component.KubeOb
       <div>
         <DrawerTitle children="Packages" />
           <DrawerItem name={ this.props.object.spec.data }>
-            Hello { this.props.object.spec.data }!
+            { this.props.object.spec.data }!
           </DrawerItem>
       </div>
     )
