@@ -36,7 +36,7 @@ export class MissionPage extends React.Component<{ extension: Renderer.LensExten
           ]}
           renderTableContents={(mission: Mission) => [
             mission.getName(),
-            mission.spec.packages.join(", "),
+            mission.spec.packages.map(function(object, i){return object.provider}).join(", "),
             mission.getAge()
           ]}
         />
