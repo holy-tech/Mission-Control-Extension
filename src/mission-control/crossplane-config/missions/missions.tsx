@@ -1,5 +1,17 @@
 import { Renderer} from "@k8slens/extensions";
 
+type CredentialConfig = {
+  name: string;
+  namespace: string;
+  key: string;
+}
+
+type PackageConfig = {
+  provider: string;
+  projectID: string;
+  credentials: CredentialConfig;
+}
+
 export class Mission extends Renderer.K8sApi.KubeObject {
   static kind = "Mission"
   static namespaced = false
@@ -14,7 +26,7 @@ export class Mission extends Renderer.K8sApi.KubeObject {
     creationTimestamp: string;
   }
   spec: {
-    packages: string[];
+    packages: PackageConfig[];
   }
   status: {}
 }
