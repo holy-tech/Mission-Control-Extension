@@ -17,8 +17,8 @@ export class MissionDetails extends React.Component<Renderer.Component.KubeObjec
         <DrawerTitle children="Packages" />
         {this.props.object.spec.packages.map(function(object, i){
           return (
-            <DrawerItem name={ object }>
-              Hello { object }!
+            <DrawerItem name={ object.provider }>
+              Hello { object.provider }!
             </DrawerItem>
           )
         })}
