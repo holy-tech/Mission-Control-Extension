@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Tab for the MissionKey CRD
 - Issue templates for testing and documentation.
 
+### Changed
+- Mission object definition.
+
 ## [0.1.0] - 08-29-2023
 ### Added
 - Basic Template for CRD tabs.
