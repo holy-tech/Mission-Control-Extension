@@ -15,13 +15,8 @@ export class VirtualMachineDetails extends React.Component<Renderer.Component.Ku
     return (
       <div>
         <DrawerTitle children="Packages" />
-          <DrawerItem name={ "key" }>
-            <Renderer.Component.Input
-              multiLine={true}
-              theme="round-black"
-              className="box grow"
-              value={ this.props.object.spec.forProvider.name }
-            />
+          <DrawerItem name={ "name" }>
+            { this.props.object.spec.forProvider.name }
           </DrawerItem>
       </div>
     )
