@@ -1,10 +1,13 @@
 import { Renderer } from "@k8slens/extensions";
 import { ExampleIcon, MissionPage } from "./src/mission-control/crossplane-config/missions/missions-page"
 import { MissionKeyPage } from "./src/mission-control/crossplane-config/missionkeys/missionkeys-page"
+import { VirtualMachinePage } from "./src/mission-control/compute/virtual-machine/virtualmachine-page"
 import { Mission } from "./src/mission-control/crossplane-config/missions/missions"
 import { MissionKey } from "./src/mission-control/crossplane-config/missionkeys/missionkeys"
+import { VirtualMachine } from "./src/mission-control/compute/virtual-machine/virtualmachine"
 import { MissionDetails } from "./src/mission-control/crossplane-config/missions/missions-details"
 import { MissionKeyDetails } from "./src/mission-control/crossplane-config/missionkeys/missionkeys-details"
+import { VirtualMachineDetails } from "./src/mission-control/compute/virtual-machine/virtualmachine-details"
 import React from "react"
 
 const {
@@ -25,6 +28,12 @@ export default class ExampleExtension extends Renderer.LensExtension {
       id: "missionkeys",
       components: {
         Page: () => <MissionKeyPage extension={this}/>,
+      }
+    },
+    {
+      id: "virtualmachine",
+      components: {
+        Page: () => <VirtualMachinePage extension={this}/>,
       }
     }
   ]
@@ -52,6 +61,21 @@ export default class ExampleExtension extends Renderer.LensExtension {
       components: {
         Icon: () => <Icon material="arrow"/>,
       }
+    },
+    {
+      id: "compute",
+      title: "Compute",
+      components: {
+        Icon: ExampleIcon,
+      }
+    },
+    {
+      parentId: "compute",
+      target: { pageId: "virtualmachine" },
+      title: "Virtual Machine",
+      components: {
+        Icon: () => <Icon material="arrow"/>,
+      }
     }
   ]
 
@@ -70,6 +94,14 @@ export default class ExampleExtension extends Renderer.LensExtension {
       priority: 10,
       components: {
         Details: (props: Renderer.Component.KubeObjectDetailsProps<MissionKey>) => <MissionKeyDetails {...props} />
+      }
+    },
+    {
+      kind: VirtualMachine.kind,
+      apiVersions: ["compute.mission-control.apis.io/v1alpha1"],
+      priority: 10,
+      components: {
+        Details: (props: Renderer.Component.KubeObjectDetailsProps<VirtualMachine>) => <VirtualMachineDetails {...props} />
       }
     }
   ]
