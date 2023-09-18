@@ -17,7 +17,6 @@ export class VirtualMachinePage extends React.Component<{ extension: Renderer.Le
           className="VirtualMachine" store={virtualMachineStore}
           sortingCallbacks={{
             [sortBy.name]: (virtualmachine: VirtualMachine) => virtualmachine.getName(),
-            [sortBy.namespace]: (virtualmachine: VirtualMachine) => virtualmachine.getNs(),
             [sortBy.age]: (virtualmachine: VirtualMachine) => virtualmachine.metadata.creationTimestamp
           }}
           searchFilters={[
@@ -26,13 +25,11 @@ export class VirtualMachinePage extends React.Component<{ extension: Renderer.Le
           renderHeaderTitle="VirtualMachine"
           renderTableHeader={[
             { title: "Name", className: "name", sortBy: sortBy.name },
-            { title: "Namespace", className: "namespace", sortBy: sortBy.namespace },
             { title: "Machine Type", className: "machinetype"},
             { title: "Age", className: "age", sortBy: sortBy.age },
           ]}
           renderTableContents={(virtualmachine: VirtualMachine) => [
             virtualmachine.getName(),
-            virtualmachine.getNs(),
             virtualmachine.spec.forProvider.machineType,
             virtualmachine.getAge()
           ]}
