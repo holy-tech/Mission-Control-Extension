@@ -2,8 +2,8 @@ import { Renderer} from "@k8slens/extensions";
 
 export class VirtualMachine extends Renderer.K8sApi.KubeObject {
   static kind = "VirtualMachine"
-  static namespaced = true
-  static apiBase = "/apis/compute.mission-control.apis.io/v1alpha1/virtualmachine"
+  static namespaced = false
+  static apiBase = "/apis/compute.mission-control.apis.io/v1alpha1/virtualmachines"
 
   kind: string
   apiVersion: string
