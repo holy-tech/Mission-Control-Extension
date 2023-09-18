@@ -27,18 +27,13 @@ export class VirtualMachinePage extends React.Component<{ extension: Renderer.Le
           renderTableHeader={[
             { title: "Name", className: "name", sortBy: sortBy.name },
             { title: "Namespace", className: "namespace", sortBy: sortBy.namespace },
-            { title: "Data", className: "data"},
+            { title: "Machine Type", className: "machinetype"},
             { title: "Age", className: "age", sortBy: sortBy.age },
           ]}
           renderTableContents={(virtualmachine: VirtualMachine) => [
             virtualmachine.getName(),
             virtualmachine.getNs(),
-            <Renderer.Component.Badge
-              scrollable
-              key={virtualmachine.spec.forProvider.name}
-              label={virtualmachine.spec.forProvider.name}
-              expandable={false}
-            />,
+            virtualmachine.spec.forProvider.machineType,
             virtualmachine.getAge()
           ]}
         />
