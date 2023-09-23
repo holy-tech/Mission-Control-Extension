@@ -1,0 +1,28 @@
+# Changelog
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+## [0.2.0] - 09-23-2023
+### Added
+- Changelog for release announcements.
+- Tab for the MissionKey CRD.
+- Tab for the VirtualMachine CRD.
+- Tab for the Storage Bucket CRD.
+- Issue templates for testing and documentation.
+
+### Changed
+- Mission object definition.
+- CICD pipeline migrated from CircleCI to Github Actions
+
+## [0.1.0] - 08-29-2023
+### Added
+- Basic Template for CRD tabs.
+- Mission table and storage using CRD and operator.
+- License Apache v2.0
+- Various developer tooling such as docker-compose and CICD through CircleCI.
+
+[0.1.0]: https://github.com/holy-tech/Mission-Control-Operator/releases/tag/v0.1.0
