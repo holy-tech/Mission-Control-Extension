@@ -1,0 +1,19 @@
+name: Mission Control Extension
+
+on: [push]
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up NPM
+        uses: actions/setup-node@v4
+        with:
+          node-version: '16.17'
+
+      - run: npm ci
+
+      - run: npm run build --if-present
